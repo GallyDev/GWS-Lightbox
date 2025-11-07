@@ -1,6 +1,6 @@
 <?php
 	// this file will be included by GWS-Debugian automatically
-	define('GWS_LIGHTBOX_VERSION', '1.0.0');
+	define('GWS_LIGHTBOX_VERSION', '1.1.0');
 
 	add_action('wp_enqueue_scripts', 'gws_lightbox_scripts');
 	function gws_lightbox_scripts() {

@@ -1,24 +1,25 @@
 // GWS-Lightbox
 const lightboxElements = document.querySelectorAll('[gws-lightbox]');
 if(lightboxElements.length > 0){
-	const lightbox = document.createElement('div');
-	lightbox.id = 'gws-lightbox';
-
-	const lightboxContent = document.createElement('div');
-	lightboxContent.classList.add('lightbox-content');
-	lightbox.appendChild(lightboxContent);
-
-
-	lightbox.addEventListener('click', e => {
-		if (e.target.tagName == "IMG") return;
-		if (e.target.classList.contains('lightbox-arrow')) return;
-		lightbox.classList.remove('open');
-	});
-	document.body.appendChild(lightbox);
-
-
 
 	lightboxElements.forEach(gallery => {
+
+		const lightbox = document.createElement('div');
+		lightbox.id = 'gws-lightbox';
+
+		const lightboxContent = document.createElement('div');
+		lightboxContent.classList.add('lightbox-content');
+		lightbox.appendChild(lightboxContent);
+
+
+		lightbox.addEventListener('click', e => {
+			if (e.target.tagName == "IMG") return;
+			if (e.target.classList.contains('lightbox-arrow')) return;
+			lightbox.classList.remove('open');
+		});
+		document.body.appendChild(lightbox);
+
+
 		const images = gallery.querySelectorAll('img:not([gws-lightbox-hide])');
 		gallery.options = gallery.getAttribute('gws-lightbox').split(' ');
 
