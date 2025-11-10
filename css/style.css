@@ -1,5 +1,10 @@
 
 /* GWS Lightbox */
+body:has(#gws-lightbox.open) {
+	overflow: hidden;
+}
+
+
 [gws-lightbox] img:not([gws-lightbox-hide]) {
 	cursor:pointer;
 }
