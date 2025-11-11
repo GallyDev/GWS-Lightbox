@@ -139,7 +139,9 @@ body:has(#gws-lightbox.open) {
 		backdrop-filter: blur(10px);
 		background-color: rgb(0 0 0 / .4);
 
-		cursor: zoom-out;
+		*{
+			cursor: zoom-out;
+		}
 	}
 
 }
