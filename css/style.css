@@ -100,6 +100,9 @@ body:has(#gws-lightbox.open) {
 		img{
 			opacity: .6;
 		}
+		img:hover{
+			opacity: .8;
+		}
 		img.gws-active{
 			opacity: 1;
 		}
