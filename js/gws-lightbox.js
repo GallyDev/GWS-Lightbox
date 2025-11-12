@@ -25,11 +25,11 @@ if(lightboxElements.length > 0){
 		document.body.appendChild(lightbox);
 
 		const links = gallery.querySelectorAll('a:has(img:not([gws-lightbox-hide]))');
-		// change links into spans
 		links.forEach(link => {
-			const span = document.createElement('span');
-			span.innerHTML = link.innerHTML;
-			link.parentNode.replaceChild(span, link);
+			// remove all attributes
+			while (link.attributes.length > 0) {
+				link.removeAttribute(link.attributes[0].name);
+			}
 		});
 
 		const images = gallery.querySelectorAll('img:not([gws-lightbox-hide])');
