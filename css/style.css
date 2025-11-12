@@ -96,6 +96,13 @@ body:has(#gws-lightbox.open) {
 		&::-webkit-scrollbar {
 			display: none;
 		}
+
+		img{
+			opacity: .6;
+		}
+		img.gws-active{
+			opacity: 1;
+		}
 	}
 
 	&:has(.lightbox-arrow)>.lightbox-content{

@@ -50,6 +50,9 @@ if(lightboxElements.length > 0){
 				if(visibleFigures.length > 0 && lb_pagination_last != visibleFigures[0]){
 					lb_pagination_last = visibleFigures[0];
 					visibleFigures[0].lb_page_img.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+
+					lightbox.querySelectorAll(".gws-active").forEach(activeImg => activeImg.classList.remove("gws-active"));
+					visibleFigures[0].classList.add("gws-active");
 				}
 			});
 		}
@@ -113,7 +116,6 @@ if(lightboxElements.length > 0){
 				if(lb_pagination_last){
 					lb_pagination_last.scrollIntoView({ behavior: "instant", block: "center", inline: "center" });
 					const lb_fml_int = setInterval(() => {
-
 						lb_pagination_last.scrollIntoView({ behavior: "instant", block: "nearest", inline: "center" });
 					}, 10);
 					setTimeout(() => {
@@ -134,6 +136,10 @@ if(lightboxElements.length > 0){
 					lb_pagination_last = lb_page_img.lb_stage_figure;
 					lb_page_img.lb_stage_figure.scrollIntoView({behavior: "instant", block: "center"});
 					lb_page_img.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+
+					lightbox.querySelectorAll(".gws-active").forEach(activeImg => activeImg.classList.remove("gws-active"));
+					lb_page_img.classList.add("gws-active");
+
 				});
 			}
 
