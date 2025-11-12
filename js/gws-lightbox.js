@@ -28,6 +28,14 @@ if(lightboxElements.length > 0){
 		const images = gallery.querySelectorAll('img:not([gws-lightbox-hide])');
 		gallery.options = [...gallery.getAttribute('gws-lightbox')?.split(' ') || [], ...gallery.classList];
 
+		const links = gallery.querySelectorAll('a:has(img:not([gws-lightbox-hide]))');
+		// change links into spans
+		links.forEach(link => {
+			const span = document.createElement('span');
+			span.innerHTML = link.innerHTML;
+			link.parentNode.replaceChild(span, link);
+		});
+
 		let lb_pagination;
 		let lb_pagination_last = null;
 		if(gallery.options.includes('paginated')){
