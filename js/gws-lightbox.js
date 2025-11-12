@@ -26,7 +26,7 @@ if(lightboxElements.length > 0){
 
 
 		const images = gallery.querySelectorAll('img:not([gws-lightbox-hide])');
-		gallery.options = [...gallery.getAttribute('gws-lightbox').split(' '), ...gallery.classList];
+		gallery.options = [...gallery.getAttribute('gws-lightbox')?.split(' '), ...gallery.classList];
 
 		let lb_pagination;
 		let lb_pagination_last = null;
