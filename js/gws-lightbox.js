@@ -52,7 +52,7 @@ if(lightboxElements.length > 0){
 					visibleFigures[0].lb_page_img.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
 
 					lightbox.querySelectorAll(".gws-active").forEach(activeImg => activeImg.classList.remove("gws-active"));
-					visibleFigures[0].classList.add("gws-active");
+					visibleFigures[0].lb_page_img.classList.add("gws-active");
 				}
 			});
 		}
