@@ -1,6 +1,7 @@
 <?php
 	// this file will be included by GWS-Debugian automatically
-	define('GWS_LIGHTBOX_VERSION', '1.1.6');
+	define('GWS_LIGHTBOX_VERSION', '1.1.7');
+	// start every github commit message with "Vx.x.x - "
 
 	add_action('wp_enqueue_scripts', 'gws_lightbox_scripts');
 	function gws_lightbox_scripts() {

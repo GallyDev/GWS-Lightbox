@@ -125,12 +125,14 @@ if(lightboxElements.length > 0){
 			});
 
 			if(gallery.options.includes('paginated')){
-				if(lightbox.classList.contains('zoom')) return;
 				const lb_page_img = document.createElement('img');
 				lb_page_img.src = img.src;
 				lb_page_img.lb_stage_figure = lb_stage_figure;
 				lb_stage_figure.lb_page_img = lb_page_img;
 				lb_pagination.appendChild(lb_page_img);
+
+
+				if(lightbox.querySelectorAll(".gws-active").length == 0) lb_page_img.classList.add("gws-active");
 
 				lb_page_img.addEventListener('click', () => {
 					lb_pagination_last = lb_page_img.lb_stage_figure;
