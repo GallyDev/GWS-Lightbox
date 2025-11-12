@@ -24,10 +24,6 @@ if(lightboxElements.length > 0){
 		});
 		document.body.appendChild(lightbox);
 
-
-		const images = gallery.querySelectorAll('img:not([gws-lightbox-hide])');
-		gallery.options = [...gallery.getAttribute('gws-lightbox')?.split(' ') || [], ...gallery.classList];
-
 		const links = gallery.querySelectorAll('a:has(img:not([gws-lightbox-hide]))');
 		// change links into spans
 		links.forEach(link => {
@@ -35,6 +31,9 @@ if(lightboxElements.length > 0){
 			span.innerHTML = link.innerHTML;
 			link.parentNode.replaceChild(span, link);
 		});
+
+		const images = gallery.querySelectorAll('img:not([gws-lightbox-hide])');
+		gallery.options = [...gallery.getAttribute('gws-lightbox')?.split(' ') || [], ...gallery.classList];
 
 		let lb_pagination;
 		let lb_pagination_last = null;
