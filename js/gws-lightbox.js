@@ -163,6 +163,7 @@ if(lightboxElements.length > 0){
 
 				lb_page_img.addEventListener('click', () => {
 					if (lb_page_img.tagName == "VIDEO") lb_stage_img.play();
+					if(lb_pagination_last.querySelector('video')) lb_pagination_last.querySelector('video').pause();
 
 					lb_pagination_last = lb_page_img.lb_stage_figure;
 					lb_page_img.lb_stage_figure.scrollIntoView({behavior: "instant", block: "center"});

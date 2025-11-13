@@ -1,7 +1,7 @@
 <?php
 	// this file will be included by GWS-Debugian automatically
-	define('GWS_LIGHTBOX_VERSION', '1.2.0');
-	// MESSAGE_INFO for the Git-Commit-Message: Galerie unterstützt jetzt auch Videos (mp4, webm)
+	define('GWS_LIGHTBOX_VERSION', '1.2.1');
+	// MESSAGE_INFO for the Git-Commit-Message: Videos werden bei allen Clicks und Veränderungen pausiert
 	// Use this format to generate Git-Commit-Message: "Vx.x.x - MESSAGE_INFO"
 	// The Git-Messages must be in german
 
