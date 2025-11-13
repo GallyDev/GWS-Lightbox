@@ -21,7 +21,7 @@ if(lightboxElements.length > 0){
 				lightbox.classList.remove('zoom');
 				return;
 			}
-			lightbox.querySelectorAll('video').forEach(video => video.pause());
+			lightboxContent.querySelectorAll('video').forEach(video => video.pause());
 			lightbox.classList.remove('open');
 		});
 		document.body.appendChild(lightbox);
