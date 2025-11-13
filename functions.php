@@ -1,7 +1,8 @@
 <?php
 	// this file will be included by GWS-Debugian automatically
-	define('GWS_LIGHTBOX_VERSION', '1.1.7');
+	define('GWS_LIGHTBOX_VERSION', '1.1.8');
 	// start every github commit message with "Vx.x.x - "
+	// V 1.1.8 - Added Video support in lightbox
 
 	add_action('wp_enqueue_scripts', 'gws_lightbox_scripts');
 	function gws_lightbox_scripts() {
