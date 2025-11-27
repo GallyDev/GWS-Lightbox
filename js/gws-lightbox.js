@@ -141,7 +141,7 @@ if(lightboxElements.length > 0){
 				let lb_page_img;
 				if(img.tagName == "VIDEO"){
 					lb_page_img = document.createElement('video');
-					lb_page_img.src = img.querySelector('source').src;
+					lb_page_img.src = img.querySelector('source') ? img.querySelector('source').src : lb_stage_img.src;
 					lb_page_img.lb_stage_figure = lb_stage_figure;
 					lb_stage_figure.lb_page_img = lb_page_img;
 					// mute and play inline
