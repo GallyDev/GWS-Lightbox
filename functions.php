@@ -1,6 +1,6 @@
 <?php
 	// this file will be included by GWS-Debugian automatically
-	define('GWS_LIGHTBOX_VERSION', '1.2.3');
+	define('GWS_LIGHTBOX_VERSION', '1.2.4');
 	// MESSAGE_INFO for the Git-Commit-Message: Erster Klick im Pagination-Thumbnail war kaputt
 	// Use this format to generate Git-Commit-Message: "Vx.x.x - MESSAGE_INFO"
 	// The Git-Messages must be in german

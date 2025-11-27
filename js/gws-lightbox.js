@@ -108,7 +108,7 @@ if(lightboxElements.length > 0){
 			let lb_stage_img;
 			if(img.tagName == "VIDEO"){
 				lb_stage_img = document.createElement('video');
-				lb_stage_img.src = img.querySelector('source').src ?? lb_stage_img.src;
+				lb_stage_img.src = img.querySelector('source') ? img.querySelector('source').src : lb_stage_img.src;
 				lb_stage_img.alt = img.alt || '';
 				lb_stage_img.controls = true;
 			} else {
