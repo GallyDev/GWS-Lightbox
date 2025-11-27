@@ -104,6 +104,8 @@ if(lightboxElements.length > 0){
 		}
 
 		images.forEach(img => {
+			if(!img.src && img.tagName != "VIDEO") return;
+
 			const lb_stage_figure = document.createElement('figure');
 			let lb_stage_img;
 			if(img.tagName == "VIDEO"){
