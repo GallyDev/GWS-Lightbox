@@ -106,8 +106,6 @@ if(lightboxElements.length > 0){
 		images.forEach(img => {
 			if(!img.src && img.tagName != "VIDEO") return;
 
-			console.log(img.src);
-
 			const lb_stage_figure = document.createElement('figure');
 			let lb_stage_img;
 			if(img.tagName == "VIDEO"){
@@ -122,6 +120,15 @@ if(lightboxElements.length > 0){
 				lb_stage_img = document.createElement('img');
 				lb_stage_img.src = img.src;
 				lb_stage_img.alt = img.alt;
+
+				// copy srcset and sizes if present
+				if(img.srcset){
+					lb_stage_img.srcset = img.srcset;
+				}
+				if(img.sizes){
+					lb_stage_img.sizes = img.sizes;
+				}
+
 			}
 			lb_stage_figure.appendChild(lb_stage_img);
 			lightboxContent.appendChild(lb_stage_figure);
@@ -163,6 +170,15 @@ if(lightboxElements.length > 0){
 				} else {
 					lb_page_img = document.createElement('img');
 					lb_page_img.src = img.src;
+
+					// copy srcset and sizes if present
+					if(img.srcset){
+						lb_page_img.srcset = img.srcset;
+					}
+					if(img.sizes){
+						lb_page_img.sizes = img.sizes;
+					}
+
 					lb_page_img.lb_stage_figure = lb_stage_figure;
 					lb_stage_figure.lb_page_img = lb_page_img;
 				}
