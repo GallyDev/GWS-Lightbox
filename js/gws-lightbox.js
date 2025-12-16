@@ -121,12 +121,14 @@ if(lightboxElements.length > 0){
 				lb_stage_img.src = img.src;
 				lb_stage_img.alt = img.alt;
 
-				// copy srcset and sizes if present
-				if(img.srcset){
-					lb_stage_img.srcset = img.srcset;
-				}
-				if(img.sizes){
-					lb_stage_img.sizes = img.sizes;
+				// if src is a data-uri, start interval that repeats until image is loaded
+				if(img.src.startsWith('data:')){
+					const checkImageLoaded = setInterval(() => {
+						if(!img.src.startsWith('data:')){
+							lb_stage_img.src = img.src;
+							clearInterval(checkImageLoaded);
+						}
+					}, 500);
 				}
 
 			}
@@ -170,15 +172,6 @@ if(lightboxElements.length > 0){
 				} else {
 					lb_page_img = document.createElement('img');
 					lb_page_img.src = img.src;
-
-					// copy srcset and sizes if present
-					if(img.srcset){
-						lb_page_img.srcset = img.srcset;
-					}
-					if(img.sizes){
-						lb_page_img.sizes = img.sizes;
-					}
-
 					lb_page_img.lb_stage_figure = lb_stage_figure;
 					lb_stage_figure.lb_page_img = lb_page_img;
 				}
