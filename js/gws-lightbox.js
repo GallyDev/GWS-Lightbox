@@ -121,9 +121,13 @@ if(lightboxElements.length > 0){
 				lb_stage_img.src = img.src;
 				lb_stage_img.alt = img.alt;
 
+				console.log(img.src);
+
 				// if src is a data-uri, start interval that repeats until image is loaded
 				if(img.src.startsWith('data:')){
+					console.log('data uri detected, starting interval to check for real src');
 					const checkImageLoaded = setInterval(() => {
+						console.log('checking image src...', img.src);
 						if(!img.src.startsWith('data:')){
 							lb_stage_img.src = img.src;
 							clearInterval(checkImageLoaded);
