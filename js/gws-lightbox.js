@@ -118,17 +118,13 @@ if(lightboxElements.length > 0){
 				lb_stage_img.controls = true;
 			} else {
 				lb_stage_img = document.createElement('img');
-				lb_stage_img.src = img.src;
-				lb_stage_img.alt = img.alt;
 
-				if(img.src.startsWith('data:')){
-					const checkImageLoaded = setInterval(() => {
-						if(!img.src.startsWith('data:')){
-							lb_stage_img.src = img.src;
-							clearInterval(checkImageLoaded);
-						}
-					}, 500);
+				if(img.dataset.lazySrc){
+					lb_stage_img.src = img.dataset.lazySrc;
+				}else{
+					lb_stage_img.src = img.src;
 				}
+				lb_stage_img.alt = img.alt;
 
 			}
 			lb_stage_figure.appendChild(lb_stage_img);
@@ -170,18 +166,13 @@ if(lightboxElements.length > 0){
 					lb_pagination.appendChild(lb_page_img);
 				} else {
 					lb_page_img = document.createElement('img');
-					lb_page_img.src = img.src;
+					if(img.dataset.lazySrc){
+						lb_page_img.src = img.dataset.lazySrc;
+					}else{
+						lb_page_img.src = img.src;
+					}
 					lb_page_img.lb_stage_figure = lb_stage_figure;
 					lb_stage_figure.lb_page_img = lb_page_img;
-
-					if(img.src.startsWith('data:')){
-						const checkImageLoaded = setInterval(() => {
-							if(!img.src.startsWith('data:')){
-								lb_page_img.src = img.src;
-								clearInterval(checkImageLoaded);
-							}
-						}, 500);
-					}
 				}
 				lb_pagination.appendChild(lb_page_img);
 
