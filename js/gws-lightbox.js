@@ -6,7 +6,7 @@ if(lightboxElements.length > 0){
 	lightboxElements.forEach(gallery => {
 
 		const lightbox = document.createElement('div');
-		lightbox.id = 'gws-lightbox';
+		lightbox.className = 'gws-lightbox';
 
 		const lightboxContent = document.createElement('div');
 		lightboxContent.classList.add('lightbox-content');
