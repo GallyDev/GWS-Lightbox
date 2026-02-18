@@ -1,6 +1,6 @@
 
 /* GWS Lightbox */
-body:has(#gws-lightbox.open) {
+body:has(.gws-lightbox.open) {
 	overflow: hidden;
 }
 
@@ -9,7 +9,7 @@ body:has(#gws-lightbox.open) {
 	cursor:pointer;
 }
 
-#gws-lightbox{
+.gws-lightbox{
 	display:block;
 	z-index: 2000;
 	position: fixed;
